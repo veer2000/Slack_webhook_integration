@@ -1,0 +1,14 @@
+# Ignore JetBrains IDE (PyCharm, IntelliJ, etc.)
+.idea/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.env/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
