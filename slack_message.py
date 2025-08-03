@@ -26,20 +26,24 @@ def main(argv):
 
     try:
         opts, args = getopt.getopt(sys.argv,"hm:", ["message="])
+        print(f'opts: {opts} and args: {args}')
+        print(args[2])
     except getopt.GetoptError:
         print(' at try Slack_alert_message.py -m <message>')
         sys.exit(2)
 
+    print(f'message is {message} and its lenght is {len(message)}')
+
     if len(opts) == 0:
-        message = 'Hello world'
+        message = args[2]
 
     for opt, arg in opts:
         if opt == '-h':
             print('at for Slack_alert_message.py -m <message>')
             sys.exit()
         elif opt in ("-m", "--message"):
-            message = arg
-
+            message = args[2]
+    print(f'message is {message} and its lenght is {len(message)}')
     send_slack_message(message)
 
 if __name__ == '__main__' :
